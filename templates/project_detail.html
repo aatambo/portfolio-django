@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+	Project - Detail
+{% endblock title %}
+{% block content %}
+	<div class="row border border-warning rounded bg-dark text-warning">
+		<div class="col-md-8" style="padding: 8px;">
+			<img src="{{ project.image.url }}" clas='img-fluid' alt="..." width="100%">
+		</div>
+		<div class="col-md-4" style="padding: 8px;">
+			<h5>Project</h5>
+			<p>{{ project.description }}</p>
+			<h5>Technology Used</h5>
+			<p>{{ project.technology }}</p>
+			<h5>Github</h5>
+			<a class="nav-link" href='{{ project.github }}'>{{ project.github }}</a>
+			<h5>Project Url</h5>
+			<a class="nav-link" href='{{ project.project_url }}'>{{ project.project_url }}</a>
+		</div>
+	</div>
+{% endblock content %}

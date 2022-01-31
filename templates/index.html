@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+	Projects
+{% endblock title %}
+{% block content %}
+	<div class="row">
+		{% for project in object_list %}
+			<div class="col-md-4">
+				<div class="card mb-3 bg-dark text-warning">
+					<img src="{{ project.image }}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">{{ project.title }}</h5>
+						<p class="card-text">{{ project.description }}</p>
+						<a class="btn btn-sm btn-outline-info" href="{% url 'project-detail' project.pk %}">Read More</a>
+						<p class="card-text"><small class="text-muted">{{ project.created }}</small></p>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock content %}
